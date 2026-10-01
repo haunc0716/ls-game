@@ -1,6 +1,6 @@
-# Dấu Ấn Lịch Sử 1939–1945
+# Trò Chơi Lật Thẻ: Vấn Đề Dân Tộc
 
-Trò chơi ghép cặp sự kiện và ý nghĩa lịch sử về phong trào giải phóng dân tộc Việt Nam giai đoạn 1939–1945.
+Trò chơi tương tác ghép cặp Khái niệm và Nội dung cốt lõi / Ý nghĩa về Vấn đề Dân tộc (môn Chủ nghĩa xã hội khoa học / MLN131).
 
 ## Chạy dự án
 
@@ -18,10 +18,9 @@ npm run build
 
 ## Cấu trúc chính
 
-- `src/data/pairs.js`: 8 cặp sự kiện và ý nghĩa lịch sử.
+- `src/data/pairs.js`: 8 cặp thẻ Khái niệm & Nội dung cốt lõi (Vấn đề Dân tộc).
 - `src/hooks/useGameLogic.js`: trạng thái trò chơi, tính điểm, đồng hồ và bảng xếp hạng.
-- `src/components/`: các màn hình và thành phần giao diện.
-- `public/assets/coffee-game/history-*.png`: bộ nền lịch sử 1939–1945.
+- `src/components/`: các màn hình và thành phần giao diện (Start, Play, Result, Leaderboard, Rules).
 - `google-apps-script/Code.gs`: backend Google Sheets cho bảng xếp hạng.
 
 ## Google Sheets leaderboard — tạo mới từ đầu (từng bước)

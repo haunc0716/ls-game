@@ -31,13 +31,13 @@ export default function StartScreen({ game }) {
     <div className="bean-particles" aria-hidden="true">{beanParticles.map((bean, i) => <i key={i} style={{ "--x": bean.x, "--size": `${bean.size}px`, "--drift": `${bean.drift}px`, "--sway": `${bean.sway}px`, "--duration": `${bean.duration}s`, "--delay": `${bean.delay}s`, "--opacity": bean.opacity, "--rotate": `${bean.rotate}deg` }} />)}</div>
     <header className="landing-nav"><BrandMark compact /><div className="nav-tools"><button className="icon-btn" onClick={() => game.setSoundEnabled(!game.soundEnabled)} aria-label="Bật hoặc tắt âm thanh">{game.soundEnabled ? <Volume2 /> : <VolumeX />}</button><button className="outline-btn" onClick={() => game.setRulesOpen(true)}><BookOpen /> Luật chơi</button></div></header>
     <section className="hero-copy">
-      <p className="eyebrow">HÀNH TRÌNH GIẢI PHÓNG DÂN TỘC · 1939–1945</p><h1>DẤU ẤN<br/><span>LỊCH SỬ</span></h1>
-      <h2>Kết nối sự kiện — Ghi nhớ chặng đường giành độc lập</h2>
-      <p className="hero-desc">Ghép đúng mỗi sự kiện với ý nghĩa lịch sử tương ứng, lần theo bước chuyển của cách mạng Việt Nam từ năm 1939 đến thắng lợi Tháng Tám 1945.</p>
-      <form className="start-form" onSubmit={submit}><label htmlFor="player">Tên người tham gia</label><div className={`name-field ${!game.playerName.trim() ? "empty" : ""}`}><input id="player" maxLength="30" autoFocus value={game.playerName} onChange={(e) => game.setPlayerName(e.target.value)} placeholder="Nhập tên của bạn"/><button type="submit" disabled={!game.playerName.trim()}>BẮT ĐẦU HÀNH TRÌNH <span>→</span></button></div></form>
+      <p className="eyebrow">CHỦ NGHĨA XÃ HỘI KHOA HỌC · VẤN ĐỀ DÂN TỘC</p><h1>VẤN ĐỀ<br/><span>DÂN TỘC</span></h1>
+      <h2>Trò chơi tương tác lật thẻ — Kết nối Khái niệm & Nội dung cốt lõi</h2>
+      <p className="hero-desc">Ghép đúng mỗi khái niệm với nội dung và ý nghĩa tương ứng để làm chủ các luận điểm cốt lõi về vấn đề dân tộc.</p>
+      <form className="start-form" onSubmit={submit}><label htmlFor="player">Tên người tham gia</label><div className={`name-field ${!game.playerName.trim() ? "empty" : ""}`}><input id="player" maxLength="30" autoFocus value={game.playerName} onChange={(e) => game.setPlayerName(e.target.value)} placeholder="Nhập tên của bạn"/><button type="submit" disabled={!game.playerName.trim()}>BẮT ĐẦU TRÒ CHƠI <span>→</span></button></div></form>
       <p className="player-code-note">Mã người chơi: <b>#{game.playerCode}</b>{game.playerDisplayName ? ` · hiển thị: ${game.playerDisplayName}` : ""}</p>
-      <div className="steps">{["Lật hai tư liệu", "Kết nối đúng sự kiện", `Hoàn thành trong ${GAME_TIME} giây`].map((x, i) => <div key={x}><b>0{i + 1}</b><span>{x}</span></div>)}</div>
+      <div className="steps">{["Lật hai thẻ bài", "Ghép đúng khái niệm", `Hoàn thành trong ${GAME_TIME} giây`].map((x, i) => <div key={x}><b>0{i + 1}</b><span>{x}</span></div>)}</div>
     </section>
-    <aside className="coffee-note"><span>08</span><p>DẤU MỐC LỊCH SỬ<br/><b>MỘT HÀNH TRÌNH</b></p></aside>
+    <aside className="coffee-note"><span>08</span><p>BỘ THẺ KIẾN THỨC<br/><b>VẤN ĐỀ DÂN TỘC</b></p></aside>
   </main>
 }

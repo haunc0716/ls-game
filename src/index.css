@@ -41,3 +41,53 @@ html,body,#root{background:#210504}
 .result-stats{border-color:rgba(244,197,66,.35);border-radius:8px;background:rgba(57,5,4,.78)}
 .lb-row{border-radius:5px;background:rgba(255,248,224,.055)}
 @media(max-width:700px){.scene--start:before{background:rgba(39,4,3,.78)}}
+
+/* Custom styles for Group 7 Flashcard content */
+.memory-card { aspect-ratio: 1.24/1; }
+.card-front {
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px 10px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(181, 42, 32, 0.35) transparent;
+}
+.card-front::-webkit-scrollbar { width: 3px; }
+.card-front::-webkit-scrollbar-thumb { background: rgba(181, 42, 32, 0.4); border-radius: 3px; }
+.card-front em {
+  flex-shrink: 0;
+  font-size: 8px;
+  padding: 2.5px 8px;
+  letter-spacing: 0.1em;
+  font-weight: 800;
+}
+.card-term-text {
+  margin: auto 0;
+  font-size: clamp(10.5px, 0.9vw, 13px);
+  font-weight: 800;
+  line-height: 1.35;
+  text-align: center;
+  color: #3b0a07;
+}
+.card-def-text {
+  font-size: clamp(9px, 0.73vw, 11px);
+  font-weight: 600;
+  line-height: 1.32;
+  text-align: justify;
+  text-align-last: center;
+  color: #2b0b08;
+  word-break: break-word;
+}
+@media(max-width: 1100px) {
+  .memory-card { aspect-ratio: 1.2/1; }
+  .card-term-text { font-size: clamp(9.5px, 1.2vw, 12px); }
+  .card-def-text { font-size: clamp(8.5px, 1vw, 10.5px); }
+}
+@media(max-width: 700px) {
+  .memory-card { aspect-ratio: 0.78/1; }
+  .card-front { padding: 4px; gap: 3px; }
+  .card-front em { font-size: 5.5px; padding: 1.5px 4px; }
+  .card-term-text { font-size: clamp(8.5px, 2.3vw, 10.5px); line-height: 1.25; }
+  .card-def-text { font-size: clamp(7.5px, 2vw, 9.2px); line-height: 1.22; text-align: left; }
+}
+
