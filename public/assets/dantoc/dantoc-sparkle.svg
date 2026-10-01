@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <radialGradient id="sparkleGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="35%" stop-color="#fae182" />
+      <stop offset="70%" stop-color="#e5a82e" />
+      <stop offset="100%" stop-color="rgba(217,143,30,0)" />
+    </radialGradient>
+  </defs>
+  <!-- Main 4-pointed diamond star -->
+  <path d="M50 0 Q50 40 10 50 Q50 60 50 100 Q50 60 90 50 Q50 40 50 0Z" fill="url(#sparkleGlow)" />
+  <!-- Diagonal 4 points -->
+  <g transform="rotate(45 50 50) scale(0.65)" transform-origin="50 50">
+    <path d="M50 0 Q50 40 10 50 Q50 60 50 100 Q50 60 90 50 Q50 40 50 0Z" fill="url(#sparkleGlow)" opacity="0.8" />
+  </g>
+  <!-- Center radiant dot -->
+  <circle cx="50" cy="50" r="5" fill="#fffdf5" />
+</svg>

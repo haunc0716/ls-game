@@ -4,9 +4,9 @@ import { fetchLeaderboard, submitScore } from "../services/api"
 
 export const SCREENS = { START: "start", PLAY: "play", RESULT: "result", LEADERBOARD: "leaderboard", TIMEOUT: "timeout" }
 export const GAME_TIME = 180
-const LEADERBOARD_KEY = "history-1939-1945-leaderboard"
+const LEADERBOARD_KEY = "mln131-dantoc-leaderboard"
 const LEADERBOARD_LIMIT = 30
-const PLAYER_CODE_KEY = "history-1939-1945-player-code"
+const PLAYER_CODE_KEY = "mln131-dantoc-player-code"
 
 const shuffle = (items) => [...items].sort(() => Math.random() - 0.5)
 const makeCards = () => shuffle(pairs.flatMap((pair, pairId) => [
@@ -15,8 +15,11 @@ const makeCards = () => shuffle(pairs.flatMap((pair, pairId) => [
 ]))
 const generatePlayerCode = () => String(Math.floor(1000 + Math.random() * 9000))
 const getOrCreatePlayerCode = () => {
-  const saved = localStorage.getItem(PLAYER_CODE_KEY)
-  if (saved) return saved
+  const saved = localStorage.getItem(PLAYER_CODE_KEY) || localStorage.getItem("history-1939-1945-player-code")
+  if (saved) {
+    localStorage.setItem(PLAYER_CODE_KEY, saved)
+    return saved
+  }
   const next = generatePlayerCode()
   localStorage.setItem(PLAYER_CODE_KEY, next)
   return next
@@ -142,7 +145,7 @@ export function useGameLogic() {
     }
 
     if (!next.length) {
-      next = rankEntries(JSON.parse(localStorage.getItem(LEADERBOARD_KEY) || "[]"))
+      next = rankEntries(JSON.parse(localStorage.getItem(LEADERBOARD_KEY) || localStorage.getItem("history-1939-1945-leaderboard") || "[]"))
     }
 
     setLeaderboard(next)
