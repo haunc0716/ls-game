@@ -1,4 +1,4 @@
-const SHEET_NAME = 'LichSu1939_1945';
+const SHEET_NAME = 'Dân tộc';
 const HEADERS = ['Tên', 'Điểm', 'Thời gian'];
 const LEADERBOARD_LIMIT = 30;
 

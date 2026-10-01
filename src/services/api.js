@@ -1,6 +1,6 @@
 // ⚠️ Dán URL Web App Google Apps Script CỦA BẠN vào đây sau khi deploy (xem README mục "Google Sheets leaderboard").
 const URL =
-  "https://script.google.com/macros/s/AKfycbz0_r9E_mILp0aIMOVypA9XHZLmBGaXhDHXkLQMsQkGFiSunEcpC8a1PFpFfSoBVxZZ/exec";
+  "https://script.google.com/macros/s/AKfycbzaxlVpzAS1AJYotqKpfE_blIHb7R1ERGX9oIiu9TfuSI8uWkaGgshi45Z-J6BdakIuCQ/exec";
 
 const toQueryString = (params) => new URLSearchParams(
   Object.entries(params).reduce((acc, [key, value]) => {
